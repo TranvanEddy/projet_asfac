@@ -1,0 +1,794 @@
+/*------------------------général--------------------*/
+* {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	outline: none;
+}
+html{
+	font-size: 62.5%;
+}
+body{
+    font-family: "Playfair Display";
+}
+li, a{
+    text-decoration: none;
+}
+a{
+    color: #249DE6;
+}
+header{
+		background: -moz-linear-gradient(150deg, white 0%, white 50%, #4E5984 50%, #4E5984 100%);
+		background: -webkit-linear-gradient(150deg, white 0%, white 50%, #4E5984 50%, #4E5984 100%);
+		background: linear-gradient(150deg, white 0%, white 50%, #4E5984 50%, #4E5984 100%);
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+}
+.logo{
+   width: 40%;
+}
+.logoa{
+   width: 100%;
+}
+h1{
+    text-align: center;
+     font-style: italic;
+     font-size: 2rem;
+     color: #4E5984;
+     font-family: "Kaushan Script";
+}
+h2, h3, h4{
+    font-family: "Kaushan Script";
+    color: #1159AD;
+}
+/*---------------------------nav bar-------------------------*/
+header nav{
+     width: 100%;
+    margin: 0 auto;
+    position: relative;
+    top: 0;
+    font-size: 1.4rem;
+}
+.conteneur-nav{
+    position: relative;
+    width: 100%;
+}
+header nav input[type=checkbox]{
+    display: none;
+}
+header nav label{
+    display: block;
+    width: 15%;
+    border-radius: 15%;
+    padding: 1rem 0;
+    text-align: center;
+    background-color: white;
+    float:right;
+    margin: 1rem;
+}
+header nav ul{
+    display: none;
+    list-style-type: none;
+    background-color: #4E5984;
+}
+header nav input[type=checkbox]:checked + ul{
+    display: flex;
+    flex-flow : column wrap;
+}
+header nav ul li{
+    flex: 1 1 auto;
+    text-align: center;
+}
+header nav > div > ul > li > a{
+    color: white;
+}
+header nav a{
+    display: block;
+    text-decoration: none;
+    color:  #1159AD;
+    padding: 1rem 0;
+}
+.sous{
+    display: flex;
+    flex-flow: column wrap;
+    z-index: 1000;
+}
+.sous li{
+    flex: 1 1 auto;
+    text-align: left;
+}
+.sous a{
+   padding: 1rem;
+    background-color: white;
+    margin-left: -20%;
+}
+.navbar{
+    position: relative;
+}
+/*---------------------------------------------------------slider----------------------------------------------*/
+.slider{
+   display: flex;
+   justify-content: center;
+    margin: 0 auto;
+}
+.slider-figure{
+    position: relative;
+    display:none;
+    max-width: 100%;
+   text-align: center;
+   overflow: hidden;
+}
+.slider-picture{
+    width: 100%;
+}
+.slider-legend{
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #555555;
+    position: absolute;
+    top:0;
+    width: 100%;
+    padding: 1rem;
+   background-color:rgba(199, 222, 245, 0.6);
+}
+.active{
+    display:block;
+}
+/*-------------------------page d'acceuil-------------------------*/
+#resume{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#resume h3, .officiels h2, .reseau h2{
+     width: 100%;
+    padding: 6% 20%;
+    background-color: #4E5984;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+}
+.news{
+    justify-content: space-between;
+    text-align: center;
+    border-bottom: 2px solid  #4E5984;
+    margin: 0 auto;
+}
+.news h2{
+    font-size: 2em;
+}
+.news p{
+    font-size: 1.5em;
+}
+.news img{
+    width: 100%;
+}
+.news a{
+    display: inline-flex;
+    border: 1px solid #2081C6;
+    background-color: #1159AD;
+    color: white;
+    padding: 1rem;
+    margin: 5%;
+}
+.news strong{
+    color: #1372CF;
+}
+.princes{
+    width: 90%;
+    text-align: center;
+    border: 5px solid #4E5984;
+    margin: 1rem auto;
+}
+.princes h2{
+    font-size: 2.5em;
+}
+.princes #a{
+    animation: blink 1s ease-in-out infinite;
+}
+@keyframes blink {
+	0% {color: #125EB2}   /*Première couleur*/
+	50% {color: #24A4ED}  /*Deuxième couleur*/
+    100% {color: #125EB2} /*À nouveau la première*/
+}
+.officiels{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.officiels a{
+    width: 30%;
+    align-self: center;
+}
+.officiels img{
+    width: 90%;
+}
+.liens{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.reseau .fab{
+    width: 90%;
+    font-size: 5em;
+    color: #1159AD;
+}
+.reseau a{
+    width:30%;
+    text-align: center;
+}
+/*------------------------------------page news------------------*/
+#page .news p{
+    text-align: left;
+    padding-left: 5%;
+    font-size: 1.1rem;
+}
+ #page #conteneur h3{
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+#page h2{
+    font-size: 2rem;
+    text-align: center;
+}
+#page h4{
+    font-size: 1.5rem;
+    color: #1372CF;
+}
+/*------------------------------page sponsors----------------------------------*/
+#conteneur .sponsor{
+    background-color: white;
+    width: 90%;
+    justify-content: center;
+    margin: 5px auto;
+    text-align: center;
+    border-bottom: 2px solid #1159AD;
+}
+#conteneur .sponsor p{
+    text-align: center;
+    margin: 0 auto;
+}
+#conteneur .sponsor img{
+    max-width: 90%;
+}
+/*----------------------------pages secondaires-----------------*/
+#page{
+    text-align: center;
+    margin: 2%;
+}
+#page p{
+    text-align: left;
+}
+#page ul{
+    list-style-type: none;
+}
+.desc h3{
+    font-size: 1.5rem;
+}
+#page img{
+    max-width: 100%;
+}
+/*on cache la photo des coachs ---page staff-----*/
+.cache{
+    display: none;
+}
+/*----------------page stade---------------------*/
+.location h3{
+    text-align: center;
+    font-size: 2rem;
+}
+/*--------------------------------------------------page liens-------------------------------------------*/
+#page .desc1 a{
+    border-bottom: 2px solid #1159AD;
+}
+/*----------------------------------------------page equipes--------------------------------*/
+#team{
+    text-align: center;
+}
+#team img{
+    width: 100%;
+}
+#page .detail li{
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#page .detail select{
+    border: 1px solid #1159AD;
+}
+#page .detail label{
+    color: #1159AD;
+}
+.detail button{
+    display: block;
+   margin: 2% auto;
+   background-color: #1159AD;
+   padding: 0.5rem;
+   color: white;
+}
+/*----------------------------page connection--------------------*/
+#connect{
+    width: 95%;
+    text-align: center;
+    margin: 0 auto;
+}
+#connect h2{
+    font-size: 2rem;
+}
+#connect label{
+  font-size: 1.5rem;
+}
+#connect input{
+    border: 1px solid #1159AD;
+}
+#connect li{
+    margin: 5px;
+    list-style-type: none;
+}
+#connect fieldset{
+    color: #1159AD;
+}
+#connect p{
+    color: red;
+}
+#connect legend{
+    font-size: 1.5rem;
+}
+#connect button{
+    margin: 1.5rem;
+    padding: 1rem;
+    background-color: #1159AD;
+    color: white;
+}
+#connect .button-cancel{
+     margin: 1.5rem;
+    padding: 1rem;
+    background-color: #249DE6;
+    color: white;
+    border: 2px solid #1159AD;
+}
+/*----------------------------page show--------------------------*/
+#show h2{
+    font-size: 2rem;
+    text-align: center;
+}
+#show p{
+    font-size: 1.3rem;
+    margin: 5%;
+}
+#show img{
+    width: 100%;
+}
+#show strong{
+    color: #1159AD;
+}
+
+/*---------------------------------------------------pages contact---------------------------------------*/
+#pageContact label{
+    color: #1159AD; 
+      padding: 1rem;
+    margin: 1rem;
+}
+#pageContact form li{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+#pageContact input, #pageContact textarea, #pageContact select{
+   padding: 1rem;
+    margin: 1rem;
+    width: 60%;
+    border:1px solid #1159AD;
+}
+#pageContact legend{
+    color: #1159AD;
+    font-family: "Kaushan Script";
+    font-size: 1.2rem;
+    text-align: center;
+}
+#pageContact button{
+    background-color: #1372CF;
+    color: white;
+    padding: 1rem;
+   margin: 1rem auto;
+    display: block;
+}
+#pageContact #image{
+    margin-left: 0;
+}
+#pageContact form p{
+    display: block;
+    text-align: center;
+}
+#pageContact{
+    text-align: center;
+}
+/*------------------------page admin-------------------------*/
+table{
+    border: 1px solid black;
+    margin: 0 auto;
+    font-size: 1rem;
+    min-width: 50%;
+    max-width: 100%;
+}
+table th{
+    background-color: #4E5984;
+}
+table tr:nth-child(even){
+  background-color:white;
+}
+table tr:nth-child(odd){
+  background-color:#D8D8D8;
+}
+table caption{
+    font-size: 1.5rem;
+    color: #1159AD;
+     font-family: "Kaushan Script";
+}
+.modif{
+    background-color: #1159AD;
+    color: white;
+    border: 1px solid black;
+}
+.suppr{
+   background-color: #249DE6;
+    color: white;
+     border: 1px solid black;
+}
+#pageAdmin {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#pageAdmin .bouton{
+    border: 1px solid black;
+    padding: 0.5rem;
+    margin: 0 auto;
+    background-color: #4E5984;
+    color: white;
+}
+#pageAdmin nav{
+    text-align: left;
+    margin: 0 auto;
+    align-items: center;
+   font-size: 1.4rem;
+   color: #1159AD;
+   width: 70%;
+}
+#pageAdmin li{
+     list-style-type : none;
+     padding: 2px;
+}
+#pageAdmin ul li a{
+    color: #1159AD;
+    font-weight: bold;
+    padding: 0.5rem;
+}
+#pageAdmin h2{
+    font-size: 2rem;
+}
+#pageAdmin p{
+    text-align: center;
+    font-size: 1rem;
+    color: #1159AD;
+}
+#pageAdmin label{
+    color: #1159AD;  
+}
+#pageAdmin form li{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+#pageAdmin input, #pageAdmin textarea, #pageAdmin select{
+    padding: 2px;
+    width: 60%;
+    border: 1px solid #1159AD;
+}
+#pageAdmin button{
+    background-color: #1372CF;
+    color: white;
+    padding: 1rem;
+   margin: 1rem auto;
+    display: block;
+}
+/*--------------------------------------------page voir cv------------------------------------------------------*/
+.cvdownload
+{
+   padding: 5px;
+   margin: 1rem auto;
+   background-color: #1159AD;
+   color: white;
+}
+/*----------------------------------------------------------------footer-----------------------------------------------------------*/
+footer{
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    background-color: #4E5984;
+    font-size: 1rem;
+} 
+footer h2, footer h3{
+    color: white;
+}
+/*------------------------------tablette---------------------------*/
+@media screen and (min-width: 768px) and (max-width: 1023px){
+body{
+    font-size: 2rem;
+}
+h1{
+    font-size: 3rem;
+}
+#page h2, #page h3, #pageAdmin h2, #pageAdmin h3, #pageContact h3{
+   font-size: 3rem; 
+}
+header nav label{
+    margin: 3rem;
+    padding: 1.2rem;
+}
+header nav a{
+    text-align: center;
+}
+.news img{
+    width: 80%;
+}
+/*-------------------------------------------------------page news----------------------------------------*/
+#page #conteneur .news h4 {
+    font-size: 2.5rem;
+}
+
+#page .news p{
+    font-size: 2rem;
+}
+/*------------------------------------------page contact----------------------------*/
+
+#pageContact fieldset{
+    width: 90%;
+    margin: 0 auto;
+}
+#pageContact legend{
+    font-size: 2rem;
+}
+/*----------------------------------------------------page connection---------------------------------------*/
+#connect{
+    width: 70%;
+}
+#connect input{
+    width: 60%;
+    margin: 0.5rem;
+}
+/*----------------------------------pages admin-------------------------*/
+#pageAdmin form li{
+    padding: 2.1%;
+}
+#pageAdmin nav{
+    text-align: center;
+}
+#pageAdmin table, #pageAdmin nav, #pageAdmin table caption{
+    font-size: 2rem;
+}
+#pageAdmin p{
+    font-size: 1.5rem;
+}
+}
+/*------------------desktop-----------------------*/
+@media screen and (min-width: 1024px){
+body{
+    font-size: 1.5rem;
+}
+.logo{
+   width: 25%;
+}
+header nav{
+    align-self: flex-end;
+    font-size: 1.5rem;
+    color: white;
+}
+.conteneur-nav{
+    position: static;
+     display: flex;
+    justify-content: flex-end;
+}
+ header nav label, header nav input{
+    display: none;
+}
+ header nav input[type=checkbox]:checked + ul, header nav ul{
+    display: flex;
+    flex-flow: row wrap;
+     width: 100%;
+    margin-bottom: 0;
+    background-color: #4E5984;
+}
+ header nav ul li{
+    position: relative;
+}
+header nav > div > ul > li > a{
+    color: #4E5984;
+}
+ header nav a{
+    border-bottom: 2px solid transparent;
+}
+ header nav a:hover{
+    color: #4E5984;
+    border-bottom: 2px solid #4E5984;
+}
+.sous{
+    display: none;
+    box-shadow: 0px 1px 2px #CCC;
+   background-color: #4E5984;
+    position: absolute;
+    width: 100%;
+}
+ header nav > div > ul li:hover .sous{
+    display: flex;
+    flex-flow: column wrap;
+}
+.sous a{
+    border-bottom: none;
+    background-color: white;
+    font-size: 1.2rem;
+    margin-left: -2.5rem;
+}
+.navbar{
+    width: 80%;
+    background-color: transparent;
+}
+h1{ 
+    font-size: 4rem;
+}
+/*---------------------------------------------------------slider----------------------------------------------*/
+.slider-legend{
+    font-size: 3em;
+}
+.slider{
+    height: 50%;
+}
+/*----------------------------------page d'acceuil--------------------------*/
+#resume h3, .officiels h2, .reseau h2{
+    padding: 3%;
+}
+.officiels .liens a{
+    width: 15%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.officiels .liens{
+    width: 100%;
+}
+.newsR{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.newsR .news{
+    width: 32%;
+} 
+/*---------------------page news-----------------------*/
+#page #conteneur{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#page h2{
+    font-size: 3rem;
+}
+.news{
+    display: inline-flex;
+    border-radius: 10%;
+    margin-bottom: 0.5rem;
+    border: 2px solid #4E5984;
+    flex-direction: column;
+    align-items: center;
+    width: 23%;
+    justify-content: space-around;
+    box-shadow: 0px 5px 10px #CCC;
+}
+.news img{
+    width: 80%;
+}
+/*------------------------------page sponsors---------------------*/
+#conteneur{
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#conteneur .sponsor{
+    width: 30%;
+    border: 2px solid #1159AD;
+}
+/*----------------------------------------------------page connection---------------------------------------*/
+#connect{
+    width: 50%;
+}
+#connect input{
+    width: 30%;
+}
+/*---------------------------------page show--------------------*/
+#show{
+   text-align: center;
+   width: 80%;
+   margin: 0 auto;
+}
+#show h2{
+    font-size: 3rem;
+}
+#show img{
+    width: 50%;
+}
+#show p{
+    font-size: 2rem;
+    text-align: left;
+    padding-left: 1.5rem;
+}
+/*------------------------------------page voir cv----------------------------------------*/
+.coordonnees{
+    width: 50%;
+    margin: 0 auto;
+}
+#pageAdmin .coordonnes{
+    text-align: left;
+}
+
+/*-----------------------------------------page stade----------------------------------*/
+.location h3{
+    font-size: 2.5rem;
+}
+/*----------------------------------------------pages contacts---------------------------------*/
+#pageContact{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#pageContact form, #pageContact .contact{
+    width:45%;
+    font-size: 2rem;
+    margin: 5%;
+}
+#pageContact legend{
+    font-size: 1.5rem;
+}
+/*on annule le display none de la photo-----page staff-----------*/
+.cache{
+    display: block;
+    margin: 0 auto;
+}
+/*---------------------------------------------page equipes----------------------------------------*/
+#team{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#team .detailTeam{
+    width: 45%;
+}
+.detail fieldset{
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+}
+.detail li{
+    margin: 0.5rem;
+}
+/*------------------------------------------------page entrainements------------------------------------------------*/
+#page .desc1 p{
+    text-align: center;
+}
+/*------------------------page admin-------------------------*/
+table{
+    font-size: 2rem;
+}
+#pageAdmin p{
+    font-size: 1.5em;
+}
+#pageAdmin nav{
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-left: 42%;
+}
+}
