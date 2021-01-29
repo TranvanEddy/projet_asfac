@@ -1,0 +1,41 @@
+<section id="pageAdmin">
+    <h2>Administration / <a href="index.php?controller=User">Gestion des utilisateurs</a> / Ajouter un utilisateur</h2>
+     <!--liens de navigation-->
+    <nav>
+        <ul>
+            <li><a href="index.php?controller=News&action=list">Gestion des news</a></li>
+            <li><a href="index.php?controller=Category">Gestion des catégories</a></li>
+            <li><a href="index.php?controller=Sponsors">Gestion des sponsors</a></li>
+            <li><a href="index.php?controller=Teams&action=list">Gestion des équipes</a></li>
+            <li><a href="index.php?controller=Season">Gestion des saisons</a></li>
+            <li><a href="index.php?controller=Level">Gestion des niveaux</a></li>
+            <li><a href="index.php?controller=Player&action=list">Gestion des joueurs</a></li>
+            <li><a href="index.php?controller=Position">Gestion des postes</a></li>
+            <li><a href="index.php?controller=Contact&action=list">Gestion des contacts</a></li>
+            <li><a href="index.php?controller=Becomepartner&action=list">Gestion des partenaires</a></li>
+            <li><a href="index.php?controller=Becomeeducator&action=list">Gestion des educateurs</a></li>
+            <li><a href="index.php?controller=User">Gestion des utilisateurs</a></li>
+        </ul>
+    </nav>
+    <!--formulaire de création-->
+    <form method="post">
+        <fieldset>
+            <legend>Ajouter un utilisateur</legend>
+            <ul>
+                <li>
+            <label for="userName">Nom de l'utilisateur</label>
+            <input name="userName" id="userName"/>
+                </li>
+                <li>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email">
+                </li>
+                <li>
+            <label for="mdp">mot de passe :</label>
+            <input type="password" id="mdp" name="mdp">
+            </li>
+            </ul>
+        </fieldset>
+        <button id="enregistrer" type="submit">Enregistrer</button>
+    </form>
+</section>

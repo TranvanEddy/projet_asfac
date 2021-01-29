@@ -1,0 +1,15 @@
+<section id="page">
+    <h2><i class="fas fa-handshake"></i>Nos Sponsors</h2>
+    <section id="conteneur">
+        <!--boucle qui affiche tous les sponsors-->
+        <?php foreach ($sponsors as $sponsor) : ?>
+            <article class="sponsor">
+                <h4><?= $sponsor->getTitle() ?></h4>
+                <p><?= $sponsor->getContent() ?></p>
+                <?php if (!empty($sponsor->getImage())) : ?>
+                    <img class="img" src="uploads/<?= $sponsor->getImage() ?>">
+                <?php endif ?>
+            </article>
+        <?php endforeach; ?>
+    </section>
+</section>

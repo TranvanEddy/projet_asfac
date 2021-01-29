@@ -1,0 +1,61 @@
+<section id="pageAdmin">
+    <h2>Administration / <a href="index.php?controller=Teams&action=list">Gestion des équipes</a> / Mise à jour d'une équipe</h2>
+    <!--liens de navigation-->
+    <nav>
+        <ul>
+            <li><a href="index.php?controller=News&action=list">Gestion des news</a></li>
+            <li><a href="index.php?controller=Category">Gestion des catégories</a></li>
+            <li><a href="index.php?controller=Sponsors">Gestion des sponsors</a></li>
+            <li><a href="index.php?controller=Teams&action=list">Gestion des équipes</a></li>
+            <li><a href="index.php?controller=Season">Gestion des saisons</a></li>
+            <li><a href="index.php?controller=Level">Gestion des niveaux</a></li>
+            <li><a href="index.php?controller=Player&action=list">Gestion des joueurs</a></li>
+            <li><a href="index.php?controller=Position">Gestion des postes</a></li>
+            <li><a href="index.php?controller=Contact&action=list">Gestion des contacts</a></li>
+            <li><a href="index.php?controller=Becomepartner&action=list">Gestion des partenaires</a></li>
+            <li><a href="index.php?controller=Becomeeducator&action=list">Gestion des educateurs</a></li>
+            <li><a href="index.php?controller=User">Gestion des utilisateurs</a></li>
+        </ul>
+    </nav>
+    <!--formulaire de mise à jour-->
+    <form method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Mise à jour d'une équipe</legend>
+            <ul>
+                <li>
+                    <label for="id_level">Niveau de l'équipe</label>
+                    <select name="id_level" id="id_level">
+                        <?php foreach ($levels as $level) : ?>
+                            <option value="<?= $level->getId() ?>" <?php if ($level->getId() == $team->getIdLevel()) : ?> selected <?php endif; ?>>
+                                <?= $level->getName() ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </li>
+                <li>
+                    <label for="id_season">Saison de l'équipe</label>
+                    <select name="id_season" id="id_season">
+                        <?php foreach ($seasons as $season) : ?>
+                            <option value="<?= $season->getId() ?>" <?php if ($season->getId() == $team->getIdSeason()) : ?> selected <?php endif; ?>>
+                                <?= $season->getName() ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </li>
+                <li>
+                    <label for="name">Nom de l'équipe</label>
+                    <input type="text" name="name" id="name" value="<?= $team->getName() ?>" />
+                </li>
+                <li>
+                    <label for="content">Description</label>
+                    <textarea id="content" name="content"><?= $team->getContent() ?></textarea>
+                </li>
+                <li>
+                    <label for="image">Image :</label>
+                    <input type="file" name="image" id="image">
+                </li>
+            </ul>
+        </fieldset>
+        <button id="enregistrer" type="submit">Enregistrer</button>
+    </form>
+</section>

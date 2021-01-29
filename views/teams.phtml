@@ -1,0 +1,33 @@
+<section id="page">
+    <h2>Saisons</h2>
+    <form class="detail" method="post" action="index.php?controller=Teams&action=show">
+        <fieldset>
+            <ul>
+                <li>
+                    <label for="id_season">Sélectionnez une saison</label>
+                    <select class="idSeason" name="id_season" id="id_season">
+                        <?php foreach ($seasons as $season) : ?>
+                            <option value="<?= $season->getId() ?>">
+                                <?= $season->getName() ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </li>
+                <li>
+                    <label for="id_level">Sélectionnez un niveau</label>
+                    <select class="idLevel" name="id_level" id="id_level">
+                        <option selected disabled hidden>Sélectionnez un niveau</option>
+                        <?php foreach ($levels as $level) : ?>
+                            <option value="<?= $level->getId() ?>">
+                                <?= $level->getName() ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </li>
+            </ul>
+        </fieldset>
+        <button type="submit">Rechercher</button>
+    </form>
+    <section id='team'>
+    </section>
+</section>

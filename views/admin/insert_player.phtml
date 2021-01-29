@@ -1,0 +1,57 @@
+<section id="pageAdmin">
+    <h2>Administration / <a href="index.php?controller=Player&action=list">Gestion des joueurs</a> / Créer un joueur</h2>
+    <!--liens de navigation-->
+    <nav>
+        <ul>
+            <li><a href="index.php?controller=News&action=list">Gestion des news</a></li>
+            <li><a href="index.php?controller=Category">Gestion des catégories</a></li>
+            <li><a href="index.php?controller=Sponsors">Gestion des sponsors</a></li>
+            <li><a href="index.php?controller=Teams&action=list">Gestion des équipes</a></li>
+            <li><a href="index.php?controller=Season">Gestion des saisons</a></li>
+            <li><a href="index.php?controller=Level">Gestion des niveaux</a></li>
+            <li><a href="index.php?controller=Player&action=list">Gestion des joueurs</a></li>
+            <li><a href="index.php?controller=Position">Gestion des postes</a></li>
+            <li><a href="index.php?controller=Contact&action=list">Gestion des contacts</a></li>
+            <li><a href="index.php?controller=Becomepartner&action=list">Gestion des partenaires</a></li>
+            <li><a href="index.php?controller=Becomeeducator&action=list">Gestion des educateurs</a></li>
+            <li><a href="index.php?controller=User">Gestion des utilisateurs</a></li>
+        </ul>
+    </nav>
+    <!--formulaire de création-->
+    <form action="index.php?controller=Player&action=insert" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Créer un joueur</legend>
+            <ul>
+                <li>
+                    <label for="id_teams">Equipe du joueur</label>
+                    <select name="id_teams" id="id_teams">
+                        <?php foreach ($teams as $team) : ?>
+                            <option value="<?= $team->getId() ?>"><?= $team->getName() ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </li>
+                <li>
+                    <label for="id_position">Poste du joueur</label>
+                    <select name="id_position" id="id_position">
+                        <?php foreach ($positions as $position) : ?>
+                            <option value="<?= $position->getIdPosition() ?>"><?= $position->getPoste() ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </li>
+                <li>
+                    <label for="firstNamePlayer">Nom du joueur</label>
+                    <input type="text" name="firstNamePlayer" id="firstNamePlayer"/>
+                </li>
+                <li>
+                    <label for="lastNamePlayer">Prenom du joueur</label>
+                    <input type="text" name="lastNamePlayer" id="lastNamePlayer"/>
+                </li>
+                <li>
+                    <label for="image">Image :</label>
+                    <input type="file" name="image" id="image">
+                </li>
+            </ul>
+        </fieldset>
+        <button id="enregistrer" type="submit">Enregistrer</button>
+    </form>
+</section>

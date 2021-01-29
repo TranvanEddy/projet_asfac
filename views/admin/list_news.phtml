@@ -1,0 +1,43 @@
+<section id="pageAdmin">
+    <h2>Administration/Gestion des news</h2>
+    <a class="bouton" href="index.php?controller=News&action=insert">Créer une news</a>
+    <!--liens de navigation-->
+    <nav>
+        <ul>
+            <li><a href="index.php?controller=Category"> Gestion des catégories</a></li>
+            <li><a href="index.php?controller=Sponsors"> Gestion des sponsors</a></li>
+            <li><a href="index.php?controller=Teams&action=list">Gestion des équipes</a></li>
+            <li><a href="index.php?controller=Season">Gestion des saisons</a></li>
+            <li><a href="index.php?controller=Level">Gestion des niveaux</a></li>
+            <li><a href="index.php?controller=Player&action=list">Gestion des joueurs</a></li>
+            <li><a href="index.php?controller=Position">Gestion des postes</a></li>
+            <li><a href="index.php?controller=Contact&action=list">Gestion des contacts</a></li>
+            <li><a href="index.php?controller=Becomepartner&action=list">Gestion des partenaires</a></li>
+            <li><a href="index.php?controller=Becomeeducator&action=list">Gestion des educateurs</a></li>
+            <li><a href="index.php?controller=User">Gestion des utilisateurs</a></li>
+        </ul>
+    </nav>
+    <!--tableau qui affiche la liste-->
+    <table>
+        <caption>Gestion des news</caption>
+        <tr>
+            <th>ID</th>
+            <th>Création</th>
+            <th>Titre</th>
+            <th>Catégorie</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+        </tr>
+        <?php foreach ($posts as $post) : ?>
+            <tr>
+                <td><?= $post->getId() ?></td>
+                <td><?= date("d/m/Y", strtotime($post->getCreatedAt())) ?></td>
+                <td><?= $post->getTitle() ?></td>
+                <td><?= Category::getOne($post->getIdCategory()) ?></td>
+                <td><a class="modif" href="index.php?controller=News&action=edit&id=<?= $post->getId() ?>">Modifier</a></td>
+                <td><a class="suppr" href="index.php?controller=News&action=delete&id=<?= $post->getId() ?>">Supprimer</a></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+    <p>Liste des news classés par ordre chronologique inversé :(<em><?= count($posts) ?></em> news au total)</p>
+</section>

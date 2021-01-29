@@ -1,0 +1,51 @@
+<section id="pageAdmin">
+    <h2>Administration / <a href="index.php?controller=News&action=list">Gestion des news</a> / Mise à jour d'un article</h2>
+    <!--liens de navigation-->
+    <nav>
+        <ul>
+            <li><a href="index.php?controller=News&action=list">Gestion des news</a></li>
+            <li><a href="index.php?controller=Category">Gestion des catégories</a></li>
+            <li><a href="index.php?controller=Sponsors">Gestion des sponsors</a></li>
+            <li><a href="index.php?controller=Teams&action=list">Gestion des équipes</a></li>
+            <li><a href="index.php?controller=Season">Gestion des saisons</a></li>
+            <li><a href="index.php?controller=Level">Gestion des niveaux</a></li>
+            <li><a href="index.php?controller=Player&action=list">Gestion des joueurs</a></li>
+            <li><a href="index.php?controller=Position">Gestion des postes</a></li>
+            <li><a href="index.php?controller=Contact&action=list">Gestion des contacts</a></li>
+            <li><a href="index.php?controller=Becomepartner&action=list">Gestion des partenaires</a></li>
+            <li><a href="index.php?controller=Becomeeducator&action=list">Gestion des educateurs</a></li>
+            <li><a href="index.php?controller=User">Gestion des utilisateurs</a></li>
+        </ul>
+    </nav>
+    <!--formulaire de mise à jour-->
+    <form method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Mise à jour d'une news</legend>
+            <ul>
+                <li>
+                    <label for="id_category">Catégorie de la news</label>
+                    <select name="id_category" id="id_category">
+                        <?php foreach ($categorys as $category) : ?>
+                            <option value="<?= $category->getId() ?>" <?php if ($category->getId() == $post->getIdCategory()) : ?> selected <?php endif; ?>>
+                                <?= $category->getName() ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </li>
+                <li>
+                    <label for="title">Titre de la news</label>
+                    <input type="text" name="title" id="title" value="<?= $post->getTitle() ?>" />
+                </li>
+                <li>
+                    <label for="content">Texte de la news</label>
+                    <textarea id="content" name="content" rows="10"><?= $post->getContent() ?></textarea>
+                </li>
+                <li>
+                    <label for="image">Image :</label>
+                    <input type="file" name="image" id="image">
+                </li>
+            </ul>
+        </fieldset>
+        <button id="enregistrer" type="submit">Enregistrer</button>
+    </form>
+</section>

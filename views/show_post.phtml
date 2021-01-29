@@ -1,0 +1,8 @@
+<section id="show">
+  <article>
+    <h2><?= $post->getTitle() ?></h2>
+    <p><?= $post->getContent() ?></p>
+    <img class="img" src="uploads/<?= $post->getImage() ?>">
+    <p><strong>edité le : </strong><?= date("d/m/Y", strtotime($post->getCreatedAt())) ?></p>
+  </article>
+</section>

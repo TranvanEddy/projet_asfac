@@ -1,0 +1,46 @@
+<section id="pageContact">
+    <article class="desc contact">
+        <h3>ASFAC - avenir sportif frontignan athletic club</h3>
+        <img src="img/asfac-contact.jpg" alt="ASFAC_Contact">
+        <p>Avenue du 81ème Régiment d'infanterie</p>
+        <p>Stade Lucien Jean</p>
+        <p>34110</p>
+        <p>FRONTIGNAN</p>
+        <img src="img/contact-mail-asfac.jpg" alt="ASFAC_Email">
+        <p>Email : athletic-club@wanadoo.fr</p>
+    </article>
+    <!--formulaire de contact-->
+    <form method="post" action="index.php?controller=Contact&action=insert" id="formRegistration2">
+        <fieldset>
+            <legend>Contactez nous</legend>
+            <ul>
+                <li>
+                    <label for="lastName">Nom * : </label>
+                    <input id="lastName" type="text" name="lastName" required>
+                </li>
+                <li>
+                    <label for="firstName">Prénom :</label>
+                    <input id="firstName" type="text" name="firstName">
+                </li>
+                <li>
+                    <label class="textarea" for="address">Adresse :</label>
+                    <textarea id="address" name="address" rows="3"></textarea>
+                </li>
+                <li>
+                    <label for="phone">Téléphone :</label>
+                    <input id="phone" type="text" name="phone" class="phone">
+                </li>
+                <li>
+                    <label for="email">E-mail * : </label>
+                    <input id="email" type="email" name="email" required>
+                </li>
+                <li>
+                    <label class="textarea" for="message">Message * :</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </li>
+            </ul>
+        </fieldset>
+        <p>Les champs marqués * sont obligatoires</p>
+        <button type="submit">Envoyer</button>
+    </form>
+</section>

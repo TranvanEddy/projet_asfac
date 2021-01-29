@@ -1,0 +1,37 @@
+<section id="pageAdmin">
+    <h2>Administration/Gestion des saisons</h2>
+    <a class="bouton" href="index.php?controller=Season&action=insert">Créer une saison</a>
+     <!--liens de navigation-->
+    <nav>
+        <ul>
+            <li><a href="index.php?controller=News&action=list"> Gestion des news</a></li>
+            <li><a href="index.php?controller=Category">Gestion des catégories</a></li>
+            <li><a href="index.php?controller=Sponsors"> Gestion des sponsors</a></li>
+            <li><a href="index.php?controller=Teams&action=list">Gestion des équipes</a></li>
+            <li><a href="index.php?controller=Level">Gestion des niveaux</a></li>
+            <li><a href="index.php?controller=Player&action=list">Gestion des joueurs</a></li>
+            <li><a href="index.php?controller=Position">Gestion des postes</a></li>
+            <li><a href="index.php?controller=Contact&action=list">Gestion des contacts</a></li>
+            <li><a href="index.php?controller=Becomepartner&action=list">Gestion des partenaires</a></li>
+            <li><a href="index.php?controller=Becomeeducator&action=list">Gestion des educateurs</a></li>
+            <li><a href="index.php?controller=User">Gestion des utilisateurs</a></li>
+        </ul>
+    </nav>
+    <!--tableau qui affiche la liste-->
+    <table>
+        <caption>Gestion des Saisons</caption>
+        <tr>
+            <th>ID</th>
+            <th>Saison</th>
+            <th>Modifier</th>
+        </tr>
+        <?php foreach ($seasons as $season) : ?>
+            <tr>
+                <td><?= $season->getId() ?></td>
+                <td><?= $season->getName() ?></td>
+                <td><a class="modif" href="index.php?controller=Season&action=edit&id=<?= $season->getId() ?>">Modifier</a></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+    <p>Liste des saisons :(<em><?= count($seasons) ?></em> saisons au total)</p>
+</section>

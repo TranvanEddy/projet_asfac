@@ -1,0 +1,40 @@
+<section id="pageAdmin">
+    <h2>Administration/Gestion des contacts</h2>
+    <!--liens de navigation-->
+    <nav>
+        <ul>
+            <li><a href="index.php?controller=News&action=list"> Gestion des news</a></li>
+            <li><a href="index.php?controller=Category">Gestion des catégories</a></li>
+            <li><a href="index.php?controller=Sponsors"> Gestion des sponsors</a></li>
+            <li><a href="index.php?controller=Teams&action=list">Gestion des équipes</a></li>
+            <li><a href="index.php?controller=Season">Gestion des saisons</a></li>
+            <li><a href="index.php?controller=Level">Gestion des niveaux</a></li>
+            <li><a href="index.php?controller=Player&action=list">Gestion des joueurs</a></li>
+            <li><a href="index.php?controller=Position">Gestion des postes</a></li>
+            <li><a href="index.php?controller=Becomepartner&action=list">Gestion des partenaires</a></li>
+            <li><a href="index.php?controller=Becomeeducator&action=list">Gestion des educateurs</a></li>
+            <li><a href="index.php?controller=User">Gestion des utilisateurs</a></li>
+        </ul>
+    </nav>
+    <!--tableau qui affiche la liste-->
+    <table>
+        <caption>Gestion des Contacts</caption>
+        <tr>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Voir détails</th>
+            <th>Supprimer</th>
+        </tr>
+        <?php foreach ($contacts as $contact) : ?>
+            <tr>
+                <td><?= $contact->getNom() ?></td>
+                <td><?= $contact->getEmail() ?></td>
+                <td><?= substr($contact->getMessage(), 0, 20) ?>...</td>
+                <td><a href="?controller=Contact&action=lookDetails&id=<?= $contact->getId() ?>">Voir détails</a></td>
+                <td><a class="suppr" href="index.php?controller=Contact&action=delete&id=<?= $contact->getId() ?>">Supprimer</a></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+    <p>Liste des contacts classés par ordre chronologique inversé :(<em><?= count($contacts) ?></em> contacts au total)</p>
+</section>

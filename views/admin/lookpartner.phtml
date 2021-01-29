@@ -1,0 +1,15 @@
+<section id="pageAdmin">
+    <h2>Détails du partenaire</h2>
+    <article class="coordonnees">
+         <!--affichage des infos du contact-->
+        <ul>
+            <li>Nom : <?= $partner->getNom() ?></li>
+            <li>Prenom : <?= $partner->getPrenom() ?></li>
+            <li>Adresse : <?= $partner->getAdresse() ?></li>
+            <li>Télephone : <?= $partner->getTelephone() ?></li>
+            <li>Email : <?= $partner->getEmail() ?></li>
+            <li>Message : <?= $partner->getMessage() ?></li>
+        </ul>
+    </article>
+    <a class="bouton" href="index.php?controller=Becomepartner&action=list">Retour à la liste</a>
+</section>

@@ -1,0 +1,15 @@
+<section id="pageAdmin">
+    <h2>Détails du contact</h2>
+    <article class="coordonnees">
+        <!--affichage des infos du contact-->
+        <ul>
+            <li>Nom : <?= $contact->getNom() ?></li>
+            <li>Prenom : <?= $contact->getPrenom() ?></li>
+            <li>Adresse : <?= $contact->getAdresse() ?></li>
+            <li>Télephone : <?= $contact->getTelephone() ?></li>
+            <li>Email : <?= $contact->getEmail() ?></li>
+            <li>Message : <?= $contact->getMessage() ?></li>
+        </ul>
+    </article>
+    <a class="bouton" href="index.php?controller=Contact&action=list">Retour à la liste</a>
+</section>

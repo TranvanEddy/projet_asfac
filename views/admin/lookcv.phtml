@@ -1,0 +1,16 @@
+<section id="pageAdmin">
+    <h2>Détails du contact</h2>
+    <article class="coordonnees">
+         <!--affichage des infos du contact-->
+    <ul>
+        <li>Nom : <?= $educator->getNom() ?></li>
+        <li>Prenom : <?= $educator->getPrenom() ?></li>
+        <li>Adresse : <?= $educator->getAdresse() ?></li>
+        <li>Télephone : <?= $educator->getTelephone() ?></li>
+        <li>Email : <?= $educator->getEmail() ?></li>
+        <li>Message : <?= $educator->getMessage() ?></li>
+    </ul>
+    </article>
+    <a href="uploads/<?= $educator->getImage()?>" class="cvdownload">Télécharger le CV</a>
+    <a class="bouton" href="index.php?controller=Becomeeducator&action=list">Retour à la liste</a>
+</section>

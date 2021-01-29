@@ -1,0 +1,14 @@
+<section id=page>
+     <h2><i class="fas fa-newspaper"></i>News</h2>
+     <section id="conteneur">
+          <?php foreach ($posts as $post) : ?>
+               <article class="news">
+                    <h4><?= $post->getTitle() ?></h4>
+                    <p><?= substr($post->getContent(), 0, 150) ?>...</p>
+                    <img class="img" src="uploads/<?= $post->getImage() ?>">
+                    <p><strong>Edité le : </strong><?= date("d/m/Y", strtotime($post->getCreatedAt())) ?></p>
+                    <a href="index.php?controller=News&action=show&id=<?= $post->getId() ?>">Lire la suite</a>
+               </article>
+          <?php endforeach; ?>
+     </section>
+</section>

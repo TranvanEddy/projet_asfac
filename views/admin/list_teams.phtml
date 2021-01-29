@@ -1,0 +1,43 @@
+<section id="pageAdmin">
+    <h2>Administration/Gestion des équipes</h2>
+    <a class="bouton" href="index.php?controller=Teams&action=insert">Créer une équipe</a>
+    <!--liens de navigation-->
+    <nav>
+        <ul>
+            <li><a href="index.php?controller=News&action=list">Gestion des news</a></li>
+            <li><a href="index.php?controller=Category"> Gestion des catégories</a></li>
+            <li><a href="index.php?controller=Sponsors"> Gestion des sponsors</a></li>
+            <li><a href="index.php?controller=Season">Gestion des saisons</a></li>
+            <li><a href="index.php?controller=Level">Gestion des niveaux</a></li>
+            <li><a href="index.php?controller=Player&action=list">Gestion des joueurs</a></li>
+            <li><a href="index.php?controller=Position">Gestion des postes</a></li>
+            <li><a href="index.php?controller=Contact&action=list">Gestion des contacts</a></li>
+            <li><a href="index.php?controller=Becomepartner&action=list">Gestion des partenaires</a></li>
+            <li><a href="index.php?controller=Becomeeducator&action=list">Gestion des educateurs</a></li>
+            <li><a href="index.php?controller=User">Gestion des utilisateurs</a></li>
+        </ul>
+    </nav>
+    <!--tableau qui affiche la liste-->
+    <table>
+        <caption>Gestion des équipes</caption>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Niveau</th>
+            <th>Saison</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+        </tr>
+        <?php foreach ($teams as $team) : ?>
+            <tr>
+                <td><?= $team->getId() ?></td>
+                <td><?= $team->getName() ?></td>
+                <td><?= Level::getOne($team->getIdLevel()) ?></td>
+                <td><?= Season::getOne($team->getIdSeason()) ?></td>
+                <td><a class="modif" href="index.php?controller=Teams&action=edit&id=<?= $team->getId() ?>">Modifier</a></td>
+                <td><a class="suppr" href="index.php?controller=Teams&action=delete&id=<?= $team->getId() ?>">Supprimer</a></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+    <p>Liste des équipes :(<em><?= count($teams) ?></em> equipes au total)</p>
+</section>

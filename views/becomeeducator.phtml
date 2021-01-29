@@ -1,0 +1,48 @@
+<section id="pageContact">
+    <article class="desc contact">
+        <h3>Devenez éducateur</h3>
+        <img src="img/asfac-contact.jpg" alt="ASFAC_Contact">
+        <p>Si vous souhaitez rejoindre l'ASFAC en tant qu'éducateur n'hésitez pas à nous contacter.</p>
+        <img src="img/contact-mail-asfac.jpg" alt="ASFAC_Email">
+        <p>Email : athletic-club@wanadoo.fr</p>
+    </article>
+    <!--formulaire de contact en tant qu'éducateur-->
+    <form method="post" action="index.php?controller=Becomeeducator&action=insert" enctype="multipart/form-data" id="formRegistration2">
+        <fieldset>
+            <legend>Contactez nous</legend>
+            <ul>
+                <li>
+                    <label for="lastName">Nom* :</label>
+                    <input id="lastName" type="text" name="lastName" required>
+                </li>
+                <li>
+                    <label for="firstName">Prénom :</label>
+                    <input id="firstName" type="text" name="firstName">
+                </li>
+                <li>
+                    <label class="textarea" for="address">Adresse :</label>
+                    <textarea id="address" name="address" rows="3"></textarea>
+                </li>
+                <li>
+                    <label for="phone">Téléphone :</label>
+                    <input id="phone" type="text" name="phone" class="phone">
+                </li>
+                <li>
+                    <label for="email">E-mail* :</label>
+                    <input id="email" type="email" name="email" required>
+                </li>
+
+                <li>
+                    <label class="textarea" for="message">Message* :</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </li>
+                <li>
+                    <label for="image">CV en PDF* :</label>
+                    <input type="file" name="image" id="image">
+                </li>
+            </ul>
+        </fieldset>
+        <p>Les champs marqués * sont obligatoires</p>
+        <button type="submit">Envoyer</button>
+    </form>
+</section>

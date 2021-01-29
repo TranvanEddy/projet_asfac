@@ -1,0 +1,41 @@
+<section id="pageAdmin">
+    <h2>Administration / <a href="index.php?controller=Sponsors">Gestion des sponsors</a> / Mise à jour d'un sponsor</h2>
+     <!--liens de navigation-->
+    <nav>
+        <ul>
+            <li><a href="index.php?controller=News&action=list">Gestion des news</a></li>
+            <li><a href="index.php?controller=Category">Gestion des catégories</a></li>
+            <li><a href="index.php?controller=Sponsors">Gestion des sponsors</a></li>
+            <li><a href="index.php?controller=Teams&action=list">Gestion des équipes</a></li>
+            <li><a href="index.php?controller=Season">Gestion des saisons</a></li>
+            <li><a href="index.php?controller=Level">Gestion des niveaux</a></li>
+            <li><a href="index.php?controller=Player&action=list">Gestion des joueurs</a></li>
+            <li><a href="index.php?controller=Position">Gestion des postes</a></li>
+            <li><a href="index.php?controller=Contact&action=list">Gestion des contacts</a></li>
+            <li><a href="index.php?controller=Becomepartner&action=list">Gestion des partenaires</a></li>
+            <li><a href="index.php?controller=Becomeeducator&action=list">Gestion des educateurs</a></li>
+            <li><a href="index.php?controller=User">Gestion des utilisateurs</a></li>
+        </ul>
+    </nav>
+    <!--formulaire de mise à jour-->
+    <form method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Mise à jour d'un sponsor</legend>
+            <ul>
+                <li>
+                    <label for="title">Nom du sponsor</label>
+                    <input type="text" name="title" id="title" value="<?= $sponsor->getTitle() ?>" />
+                </li>
+                <li>
+                    <label for="content">Texte du sponsor</label>
+                    <textarea id="content" name="content" rows="5"><?= $sponsor->getContent() ?></textarea>
+                </li>
+                <li>
+                    <label for="image">Image :</label>
+                    <input type="file" name="image" id="image">
+                </li>
+            </ul>
+        </fieldset>
+        <button id="enregistrer" type="submit">Enregistrer</button>
+    </form>
+</section>

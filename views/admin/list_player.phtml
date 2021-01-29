@@ -1,0 +1,44 @@
+<section id="pageAdmin">
+    <h2>Administration/Gestion des joueurs</h2>
+    <a class="bouton" href="index.php?controller=Player&action=insert">Créer un joueur</a>
+    <!--liens de navigation-->
+    <nav>
+        <ul>
+            <li><a href="index.php?controller=News&action=list">Gestion des news</a></li>
+            <li><a href="index.php?controller=Category"> Gestion des catégories</a></li>
+            <li><a href="index.php?controller=Sponsors"> Gestion des sponsors</a></li>
+            <li><a href="index.php?controller=Season">Gestion des saisons</a></li>
+            <li><a href="index.php?controller=Level">Gestion des niveaux</a></li>
+            <li><a href="index.php?controller=Position">Gestion des postes</a></li>
+            <li><a href="index.php?controller=Contact&action=list">Gestion des contacts</a></li>
+            <li><a href="index.php?controller=Becomepartner&action=list">Gestion des partenaires</a></li>
+            <li><a href="index.php?controller=Becomeeducator&action=list">Gestion des educateurs</a></li>
+            <li><a href="index.php?controller=User">Gestion des utilisateurs</a></li>
+        </ul>
+    </nav>
+    <!--tableau qui affiche la liste-->
+    <table>
+        <caption>Gestion des joueurs</caption>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Equipe</th>
+            <th>Poste</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+        </tr>
+        <?php foreach ($players as $player) : ?>
+            <tr>
+                <td><?= $player->getIdPlayer() ?></td>
+                <td><?= $player->getFirstNamePlayer() ?></td>
+                <td><?= $player->getLastNamePlayer() ?></td>
+                <td><?= Teams::getOne($player->getIdTeams()) ?></td>
+                <td><?= Position::getOne($player->getIdPosition()) ?></td>
+                <td><a class="modif" href="index.php?controller=Player&action=edit&id=<?= $player->getIdPlayer() ?>">Modifier</a></td>
+                <td><a class="suppr" href="index.php?controller=Player&action=delete&id=<?= $player->getIdPlayer() ?>">Supprimer</a></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+    <p>Liste des joueurs :(<em><?= count($players) ?></em> joueurs au total)</p>
+</section>

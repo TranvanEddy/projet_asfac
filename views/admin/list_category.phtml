@@ -1,0 +1,37 @@
+<section id="pageAdmin">
+    <h2>Administration/Gestion des categories</h2>
+    <a class="bouton" href="index.php?controller=Category&action=insert">Créer une catégorie</a>
+     <!--liens de navigation-->
+    <nav>
+        <ul>
+            <li><a href="index.php?controller=News&action=list"> Gestion des news</a></li>
+            <li><a href="index.php?controller=Sponsors"> Gestion des sponsors</a></li>
+            <li><a href="index.php?controller=Teams&action=list">Gestion des équipes</a></li>
+            <li><a href="index.php?controller=Season">Gestion des saisons</a></li>
+            <li><a href="index.php?controller=Level">Gestion des niveaux</a></li>
+            <li><a href="index.php?controller=Player&action=list">Gestion des joueurs</a></li>
+            <li><a href="index.php?controller=Position">Gestion des postes</a></li>
+            <li><a href="index.php?controller=Contact&action=list">Gestion des contacts</a></li>
+            <li><a href="index.php?controller=Becomepartner&action=list">Gestion des partenaires</a></li>
+            <li><a href="index.php?controller=Becomeeducator&action=list">Gestion des educateurs</a></li>
+            <li><a href="index.php?controller=User">Gestion des utilisateurs</a></li>
+        </ul>
+    </nav>
+    <!--tableau qui affiche la liste-->
+    <table>
+        <caption>Gestion des Catégories</caption>
+        <tr>
+            <th>ID</th>
+            <th>Catégorie</th>
+            <th>Modifier</th>
+        </tr>
+        <?php foreach ($categorys as $category) : ?>
+            <tr>
+                <td><?= $category->getId() ?></td>
+                <td><?= $category->getName() ?></td>
+                <td><a class="modif" href="index.php?controller=Category&action=edit&id=<?= $category->getId() ?>">Modifier</a></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+    <p>Liste des catégories : (<em><?= count($categorys) ?></em> categories au total)</p>
+</section>

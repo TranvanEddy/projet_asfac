@@ -1,0 +1,44 @@
+<h1>Bienvenue sur le site de l'ASFAC</h1>
+<!--images du slider-->
+<div class="slider">
+  <figure class="slider-figure active">
+    <img class="slider-picture" src="img/slides/1.jpg" alt="asfac_u20_2020">
+    <figcaption class="slider-legend">U20 Régionale 1</figcaption>
+  </figure>
+  <figure class="slider-figure">
+    <img class="slider-picture" src="img/slides/2.jpg" alt="asfac_u17_2020">
+    <figcaption class="slider-legend">u17 Régionale 1</figcaption>
+  </figure>
+  <figure class="slider-figure">
+    <img class="slider-picture" src="img/slides/3.jpg" alt="asfac_u16_2020">
+    <figcaption class="slider-legend">U16 Régionale 2</figcaption>
+  </figure>
+  <figure class="slider-figure">
+    <img class="slider-picture" src="img/slides/4.jpg" alt="asfac_u15_2020">
+    <figcaption class="slider-legend">U15 Départementale 1</figcaption>
+  </figure>
+  <figure class="slider-figure">
+    <img class="slider-picture" src="img/slides/5.jpg" alt="asfac_feminines_2020">
+    <figcaption class="slider-legend">Féminines U13, U15, U18</figcaption>
+  </figure>
+  <figure class="slider-figure">
+    <img class="slider-picture" src="img/slides/6.jpg" alt="asfac_ecole_de_foot_2020">
+    <figcaption class="slider-legend">Ecole de foot</figcaption>
+  </figure>
+</div>
+<!--affichage des 3 dernières news-->
+<section id="resume">
+  <h3><i class="fas fa-newspaper"></i> Dernières News</h3>
+  <div class="newsR">
+    <?php foreach (array_slice($posts, 0, 3) as $post) : ?>
+      <article class="news">
+        <h2><?= $post->getTitle() ?></h2>
+        <p><?= substr($post->getContent(), 0, 100) ?>...</p>
+        <img class="img" src="uploads/<?= $post->getImage() ?>">
+        <p><strong>Edité le : </strong><?= date("d/m/Y", strtotime($post->getCreatedAt())) ?></p>
+        <a href="index.php?controller=News&action=show&id=<?= $post->getId() ?>">Lire la suite</a>
+      </article>
+    <?php endforeach; ?>
+  </div>
+</section>
+<script src="js/slide.js"></script>
